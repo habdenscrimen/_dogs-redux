@@ -3,7 +3,7 @@ import { Router } from '@reach/router'
 import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirebase } from 'react-redux-firebase'
 
-import { LoginPage, GameBoardPage } from './pages'
+import { LoginPage, GameBoardPage, MenuPage } from './pages'
 import { Spinner, Header } from './components'
 import { AppState } from './store'
 
@@ -24,7 +24,8 @@ export const App: FunctionComponent = () => {
       <Header logout={firebase.logout} userName={auth.displayName} />
 
       <Router>
-        <GameBoardPage path="/" />
+        <MenuPage path="/menu" default />
+        <GameBoardPage path="/game" />
       </Router>
     </Fragment>
   )
