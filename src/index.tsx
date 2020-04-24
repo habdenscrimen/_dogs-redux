@@ -5,10 +5,12 @@ import {
   ReactReduxFirebaseProvider,
   ReactReduxFirebaseConfig,
 } from 'react-redux-firebase'
-import firebase from '~/firebase'
+import { Global } from '@emotion/core'
 
-import { congigureStore } from './store'
 import { App } from './app'
+import firebase from './firebase'
+import { congigureStore } from './store'
+import { globalStyles } from './styles'
 
 const store = congigureStore()
 
@@ -24,6 +26,8 @@ ReactDOM.render(
       config={rrfConfig}
       dispatch={store.dispatch}
     >
+      <Global styles={globalStyles} />
+
       <App />
     </ReactReduxFirebaseProvider>
   </Provider>,
