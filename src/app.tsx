@@ -21,7 +21,7 @@ export const App: FunctionComponent = () => {
 
   return (
     <Fragment>
-      <Header logout={firebase.logout} />
+      <Header logout={firebase.logout} userName={auth.displayName} />
 
       <Router>
         <GameBoardPage path="/" />

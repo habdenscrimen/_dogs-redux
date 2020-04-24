@@ -9,6 +9,22 @@ module.exports = {
       },
       'import-react-use',
     ],
+    [
+      'import',
+      {
+        libraryName: 'react-feather',
+        libraryDirectory: 'dist/icons',
+        camel2DashComponentName: true,
+        customName: (name) => {
+          if (name === 'trash2') {
+            return 'react-feather/dist/icons/trash-2'
+          }
+
+          return `react-feather/dist/icons/${name}`
+        },
+      },
+      'import-react-feather',
+    ],
 
     // for emotion
     'transform-inline-environment-variables',
