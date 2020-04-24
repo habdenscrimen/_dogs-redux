@@ -15,9 +15,7 @@ import { globalStyles } from './styles'
 const store = congigureStore()
 
 // react-redux-firebase config
-const rrfConfig: Partial<ReactReduxFirebaseConfig> = {
-  userProfile: 'users',
-}
+const rrfConfig: Partial<ReactReduxFirebaseConfig> = {}
 
 ReactDOM.render(
   <Provider store={store}>

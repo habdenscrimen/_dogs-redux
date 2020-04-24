@@ -1,6 +1,12 @@
 import React, { FunctionComponent } from 'react'
-import { RouteComponentProps } from '@reach/router'
+import { RouteComponentProps, Link } from '@reach/router'
 
 export const MenuPage: FunctionComponent<RouteComponentProps> = () => {
-  return <main>Menu Page</main>
+  return (
+    <main>
+      <span>Menu Page</span>
+
+      <Link to="/game">Play</Link>
+    </main>
+  )
 }

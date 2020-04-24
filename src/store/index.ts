@@ -4,6 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { firebaseReducer } from 'react-redux-firebase'
 
 const rootReducer = combineReducers({
+  // Add firebase to reducers
   firebase: firebaseReducer,
 })
 
