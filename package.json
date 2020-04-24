@@ -1,0 +1,36 @@
+{
+  "name": "_dogs-redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html",
+    "format": "npx prettier --write './!(node_modules|dist)/**/*.{ts,tsx,js,jsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/habdenscrimen/_dogs-redux.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/habdenscrimen/_dogs-redux/issues"
+  },
+  "homepage": "https://github.com/habdenscrimen/_dogs-redux#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.2",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "0.0.6",
+    "parcel-plugin-compress": "^2.0.1",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  }
+}
