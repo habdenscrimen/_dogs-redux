@@ -1,11 +1,20 @@
 import { combineReducers, applyMiddleware, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { firebaseReducer } from 'react-redux-firebase'
+import { firebaseReducer, FirebaseReducer } from 'react-redux-firebase'
 
-const rootReducer = combineReducers({
-  // Add firebase to reducers
+// dogs
+import { dogsReducer } from './dogs/reducers'
+import { DogsState } from './dogs/types'
+
+interface RootReducer {
+  firebase: FirebaseReducer.Reducer
+  dogs: DogsState
+}
+
+const rootReducer = combineReducers<RootReducer>({
   firebase: firebaseReducer,
+  dogs: dogsReducer,
 })
 
 export type AppState = ReturnType<typeof rootReducer>

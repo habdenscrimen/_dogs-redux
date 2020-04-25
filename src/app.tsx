@@ -4,11 +4,10 @@ import { useSelector } from 'react-redux'
 import { isLoaded, isEmpty, useFirebase } from 'react-redux-firebase'
 
 import { LoginPage, GameBoardPage, MenuPage } from './pages'
-import { Spinner, Header } from './components'
+import { Spinner } from './components'
 import { AppState } from './store'
 
 export const App: FunctionComponent = () => {
-  const firebase = useFirebase()
   const auth = useSelector((state: AppState) => state.firebase.auth)
 
   if (!isLoaded(auth)) {
@@ -20,13 +19,9 @@ export const App: FunctionComponent = () => {
   }
 
   return (
-    <Fragment>
-      <Header logout={firebase.logout} userName={auth.displayName} />
-
-      <Router>
-        <MenuPage path="/menu" default />
-        <GameBoardPage path="/game" />
-      </Router>
-    </Fragment>
+    <Router>
+      <MenuPage path="/menu" default auth={auth} />
+      <GameBoardPage path="/game" />
+    </Router>
   )
 }
